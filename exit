@@ -1,0 +1,48 @@
+warning: in the working copy of 'Tarea4Endes23/src/entidadFinanciera/Main.java', LF will be replaced by CRLF the next time Git touches it
+[1mdiff --git a/Tarea4Endes23/src/entidadFinanciera/Main.java b/Tarea4Endes23/src/entidadFinanciera/Main.java[m
+[1mindex a90baa5..95f082b 100644[m
+[1m--- a/Tarea4Endes23/src/entidadFinanciera/Main.java[m
+[1m+++ b/Tarea4Endes23/src/entidadFinanciera/Main.java[m
+[36m@@ -1,5 +1,8 @@[m
+ package entidadFinanciera;[m
+ [m
+[32m+[m[32mimport java.util.logging.Level;[m
+[32m+[m[32mimport java.util.logging.Logger;[m
+[32m+[m
+ /**[m
+  * Clase principal que contiene el método main para probar la clase CCuenta.[m
+  */[m
+[36m@@ -15,6 +18,18 @@[m [mpublic class Main {[m
+         objetoCuenta = new CCuenta("Antonio López", "1000-2365-85-1230456789", 2500, 0);[m
+         saldoActual = objetoCuenta.estado();[m
+         System.out.println("El saldo actual es: " + saldoActual);[m
+[32m+[m[41m        [m
+[32m+[m[32m        try {[m
+[32m+[m[32m            probarIngresar(objetoCuenta, 2000, CCuenta);[m
+[32m+[m[32m        } catch (Exception ex) {[m
+[32m+[m[32m            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);[m
+[32m+[m[32m        }[m
+[32m+[m[41m        [m
+[32m+[m[32m        try {[m
+[32m+[m[32m            probarRetirar(objetoCuenta, 3000, CCuenta);[m
+[32m+[m[32m        } catch (Exception ex) {[m
+[32m+[m[32m            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);[m
+[32m+[m[32m        }[m
+     }[m
+ [m
+     /**[m
+[36m@@ -27,6 +42,7 @@[m [mpublic class Main {[m
+      */[m
+     public static void probarIngresar(CCuenta c, int cantidad, CCuenta cantidadEsperada) throws Exception {[m
+         c.ingresar(cantidad);[m
+[32m+[m[41m        [m
+     }[m
+ [m
+     /**[m
+[36m@@ -40,5 +56,6 @@[m [mpublic class Main {[m
+     public static void probarRetirar(CCuenta c, int cantidad, CCuenta cantidadEsperada) throws Exception {[m
+         c.retirar(cantidad);[m
+     }[m
+[32m+[m[41m    [m
+ }[m
+ [m
